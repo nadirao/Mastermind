@@ -52,7 +52,9 @@ Lose Case:
 IF ALL five attempts are exhausted and guesses !== winning combo then player loses, set winning combo visibility to 'visible' and play again visibility to 'visible'. GAME OVER
 
 */  
-  
+ 
+
+
   
   /*----- constants -----*/
 
