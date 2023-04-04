@@ -13,6 +13,8 @@ Board:  -Seven rows. One row for color selection (6 Elements)(constant), five ro
         on how many attempts the player needs to guess the winning combo >= 1 <= 5) 
         -one dimensional array for the attempts, winning combos and color selection
         -2D array (2 columns and 2 rows) for the hints (idek lol??) 
+        - null/0 -> no guess in cell
+        - 1/guess in cell
 
 Constant Variables (Data that cannot change throughout gameplay)
 Color Selection: -Six colors to choose from will maintain throughout game play
