@@ -15,12 +15,13 @@ body {
 header {
     font-size: 4vmin;
     color: darkblue;
-    letter-spacing: 1vmin;
+    letter-spacing: .5vmin;
+    text-align: center;
 }
 
 h1 {
     color: #a1d3ff;
-    font-size: 3vmin;
+    font-size: 2vmin;
 }
 
 /* #playBtn {
@@ -33,11 +34,39 @@ h1 {
     line-height: 2vmin;
 } */
 
+#board {
+    width: 45%;
+    height: 100%;
+    margin: auto;
+    background-color:papayawhip;
+    overflow: auto;
+    border: solid;
+    border-width: thin;
+    border-color: black;
+    border-radius: 10%;
+    position: relative;
+    padding-top: 5vmin;
+    padding-left: 2vmin;
+}
+
+
 .row {
+    margin-top: 2vmin;
     padding: 5vmin;
 }
 
-.hints-container, .guess, #lastRow {
+.hints-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1vmin);
+    grid-template-rows: repeat(2, 1vmin);
+    gap: 1.5vmin;
+    margin-top: 5vmin;
+    min-width: 5vmin;
+    min-height: 5vmin;
+    float: left;
+}
+
+.guess, #lastRow {
     margin-top: 5vmin;
     width: 4vmin;
     height: 4vmin;
@@ -48,8 +77,22 @@ h1 {
     border: solid;
     border-color: black;
     border-radius: 50%;
-    border-width: 2px;
+    border-width: thin;
     background-color: #a1d3ff;
-    margin-left: 25px;
+    margin-left: 2vmin;
 }
+
+.hint {
+    background-color: dodgerblue;
+    width: 2vmin;
+    height: 2vmin;
+    /* margin: 1vmin; */
+    border: solid;
+    border-color: black;
+    border-radius: 50%;
+    float: left;
+    border-width: thin;
+}
+
+
 
