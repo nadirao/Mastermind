@@ -64,7 +64,7 @@ header {
 
 }
 
-.hints-container {
+.hints-container, .placeholder {
     display: grid;
     grid-template-columns: repeat(2, 1vmin);
     grid-template-rows: repeat(2, 1vmin);
