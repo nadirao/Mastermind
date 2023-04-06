@@ -76,14 +76,14 @@ h1 {
     justify-content: center;
 }
 
-.guess, #lastRow, .colors > div {
+.guess, .secret-color, .colors > div {
     margin-top: auto;
     width: 3vmin;
     height: 3vmin;
     float: left;
 }
 
-.guess, .colors > div {
+.guess, .colors > div, .secret-color {
     border: solid;
     border-color: black;
     border-radius: 50%;
