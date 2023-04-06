@@ -39,7 +39,7 @@ header {
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 40vmin;
+    width: 30vmin;
     height: 95vmin;
     margin: auto;
     background-color:papayawhip;
@@ -77,14 +77,14 @@ header {
     justify-content: center;
 }
 
-.guess, .secret-color, .colors > div {
+.guess, .win-sequence > div, .colors > div {
     margin-top: auto;
     width: 3vmin;
     height: 3vmin;
     float: left;
 }
 
-.guess, .colors > div, .secret-color {
+.guess, .colors > div, .win-sequence > div {
     border: solid;
     border-color: black;
     border-radius: 50%;
@@ -140,10 +140,11 @@ header {
     margin-bottom: 4vmin;
 }
 
-.win {
+.win-sequence {
     border: solid darkslategrey;
     border-width: thin;
     border-radius: 0%;
+    padding: .4vmin;
 }
 
 
