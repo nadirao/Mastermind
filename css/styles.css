@@ -17,12 +17,13 @@ header {
     color: darkblue;
     letter-spacing: .5vmin;
     text-align: center;
+    margin: auto;
 }
 
-h1 {
+/* h1 {
     color: #a1d3ff;
     font-size: 2vmin;
-}
+} */
 
 /* #playBtn {
     width: 7vmin;
@@ -139,6 +140,11 @@ h1 {
     margin-bottom: 4vmin;
 }
 
+.win {
+    border: solid darkslategrey;
+    border-width: thin;
+    border-radius: 0%;
+}
 
 
 
