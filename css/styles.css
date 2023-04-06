@@ -49,7 +49,7 @@ header {
 }
 
 
-.row {
+.row, .win-row, .color-row {
   
     display: flex;
     flex-direction: row;
@@ -130,9 +130,10 @@ header {
 
 .colors {
     display: grid;
-    grid-template-columns: repeat(3, 1vmin);
-    grid-template-rows: repeat(2, 1vmin);
-    gap: 4vmin;
+    grid-template-columns: repeat(3, 2vmin);
+    grid-template-rows: repeat(2, 2vmin);
+    width: 7vmin;
+    gap: 2vmin;
     margin-bottom: 4vmin;
 }
 
