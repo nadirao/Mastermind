@@ -11,7 +11,7 @@
   /*----- cached elements  -----*/
   const restartBtnEl = document.getElementById('restartBtn');
   const colorEl = document.querySelector('.colors');
-  const winEl = document.querySelectorAll('.secret-color');
+  const winEl = [...document.querySelectorAll('.secret-color')];
   const hintEl = document.querySelectorAll('.hint');
   const boardEl = document.querySelector('#board');
   const currAttemptEl = document.querySelectorAll('.row');
@@ -23,8 +23,13 @@
   /*----- event listeners -----*/
   restartBtnEl.addEventListener('click', function handleClick(evt){
        // when this button is clicked , gameboard should clear colortofill 
-       // and rowtofill and hints
+       // and rowtofill and hints 
+
        initialize();
+
+       guessEl.forEach(attempt => {
+            attempt.style.backgroundColor = 'white'
+       })
 
   })
 
@@ -55,6 +60,7 @@
             }
             if (count === 4){
                   alert('you won')
+            
             }
       }
 
@@ -77,10 +83,11 @@
       //render();
   }
 
-  function getWin(){
+function getWin(){
 
       for(let i = 0; i < 4; i++){
             winColorToFill.push(colors[Math.floor(Math.random() * 5)])
+            winEl[i].style.backgroundColor = winColorToFill[i]
       }
 
       return winColorToFill
