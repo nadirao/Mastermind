@@ -6,7 +6,7 @@ Mastermind or Master Mind is a code-breaking game for two players. The idea of t
 
 # Game Previews
 
-<img src="img/wireframe.heic" width="500px" alt="game-start-preview">
+<img src="img/wireframe.png" width="500px" alt="game-start-preview">
 
 # Getting Started
 
