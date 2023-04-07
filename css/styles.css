@@ -20,6 +20,13 @@ header {
     margin: auto;
 }
 
+#win-msg {
+    font-size: 2vmin;
+    color: black;
+    text-align: right;
+    margin: 0;
+}
+
 
 /* #playBtn {
     width: 7vmin;
