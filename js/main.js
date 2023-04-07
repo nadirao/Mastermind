@@ -58,7 +58,7 @@
 
      if (rowToFill === 0 && circleToFill === 4){
       winRowEl[0].style.visibility = 'visible';
-            winMsgEl.innerText = 'You Lose :('
+            winMsgEl.innerText = 'You Lose :( Click Restart to Play Again!'
 
      }
 
@@ -79,6 +79,7 @@
                        countGuesses +=1;
                  } 
            } 
+
            if (countGuesses === 4){
                   winMsgEl.innerText = 'You Win. Click Restart to Play Again!'
                   winRowEl[0].style.visibility = 'visible';

@@ -6,7 +6,7 @@ Mastermind or Master Mind is a code-breaking game for two players. The idea of t
 
 # Game Previews
 
-<img src="img/wireframe.png" width="500px" alt="game-start-preview">
+<!-- <img src="img/wireframe.png" width="500px" alt="game-start-preview"> -->
 
 # Getting Started
 
@@ -14,4 +14,13 @@ https://nadirao.github.io/Mastermind/
 
 Instructions: 
 
+- guess a secret code consisting of a series of 4 guesses
+- after each guess, the hints will turn black if your guess matches the secret code
+- solve the secret code with fewer guesses
+- if all attempts have been exhausted, you lose! 
+
 # Next Steps
+
+- Refactor Code
+- Work on hints logic 
+- Display Messages 
