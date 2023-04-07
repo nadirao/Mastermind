@@ -44,8 +44,6 @@
  colorEl.addEventListener('click', function pickColor(evt){
      const clickedEl = evt.target;
 
-     console.log(evt.target)
-
      if (clickedEl.className !== 'sub-color') return;
 
      if (circleToFill === 5){
