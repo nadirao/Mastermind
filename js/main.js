@@ -65,7 +65,7 @@ function initialize() {
            hintToFill -= 1;
            currAttemptEl[rowToFill+1].style.border = 'none';
            currAttemptEl[rowToFill+1].style.padding = '0';
-           currAttemptEl[rowToFill].style.borderRadius = '0';
+           currAttemptEl[rowToFill+1].style.borderRadius = 'none';
      }
 
 //      if(circleToFill === 4){
