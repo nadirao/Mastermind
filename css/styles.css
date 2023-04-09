@@ -172,7 +172,7 @@ header {
     width: 30vmin;
     height: 95vmin;
     margin: auto;
-    background-color: white;
+    background-color: #f1e6de;
     overflow: auto;
     border: 1px solid #4C3434;
     border-radius: 10px;
@@ -183,9 +183,10 @@ header {
 
 h1{
     font-family: "Alegreya Sans SC", Arial;
-    font-size: 2vmin;
+    font-size: 3vmin;
     font-weight: normal;
     color: navy;
+    text-decoration: underline;
 }
 
 #startBtn {
