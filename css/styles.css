@@ -212,3 +212,8 @@ p {
     padding: 1vmin;
     margin-top: 0;
 }
+
+p > strong {
+    color: rgb(221, 57, 28);
+    font-weight: normal;
+}
