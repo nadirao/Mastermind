@@ -179,6 +179,7 @@ header {
     padding-top: 2vmin;
     box-shadow: 2px 2px 5px 1px rgba(173, 173, 173, .37);
     position: absolute;
+    animation-duration: 3s;
 }
 
 h1, p {
@@ -189,6 +190,12 @@ h1, p {
     text-decoration: underline;
 }
 
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {transform: translateY(0);} 
+    40% {transform: translateY(-30px);} 
+    60% {transform: translateY(-15px);} 
+ } 
+
 #startBtn {
     background: none;
 	color: rgb(221, 57, 28);
@@ -198,6 +205,8 @@ h1, p {
 	font-family: "Alegreya Sans SC", Arial;
 	cursor: pointer;
 	outline: inherit;
+    animation-duration: 2s;
+    animation-name: bounce;
 }
 
 #startBtn:hover{
@@ -217,3 +226,4 @@ p > strong {
     color: rgb(221, 57, 28);
     font-weight: normal;
 }
+
