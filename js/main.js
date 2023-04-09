@@ -187,14 +187,10 @@ function changeGuessColor(evt){
 };
 
      //to-do: 1) stop execution at win
-     //stop execution at lose
-     //incorporate render functions to code
-      //refactor!
-
-      
-     //2) hint logic, no order for matches and no order for close matches
-     //take back guess on current row ONLY
-     //update styling of border/highlight on current row
+     //2)incorporate render functions to code and refactor!
+     //3) hint logic, no order for matches and no order for close matches
+     //4)take back guess on current row ONLY
+     //5) OPTIONAL update styling of border/highlight on current row
 
 
 
