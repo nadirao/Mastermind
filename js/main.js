@@ -1,39 +1,34 @@
  /*----- constants -----*/
- const userGuess = [0,1,2,3,4,5];
  const colors = ['blue','pink','yellow','green','red','orange'];
-
- 
  /*----- state variables -----*/
+
  let circleToFill; //current guess (just the individual guess to fill with color selected)
  let rowToFill; // attmept number initialized to 9 last row but first attempt in gameplay
  let winColorToFill; // win sequence initialized to random 
  let rowToCompare; // current guess (all 4 in array to compare with win sequence)
  let hintToFill; //hint number init to 0
  let hintElToFill; //hint element init to 9 last row but first attempt in gameplay
+ 
  /*----- cached elements  -----*/
+
  const restartBtnEl = document.getElementById('restartBtn');
  const colorEl = document.querySelector('.colors');
  const winEl = [...document.querySelectorAll('.secret-color')];
  const hintEl = [...document.querySelectorAll('.hints-container')];
- const boardEl = document.querySelector('#board');
  const currAttemptEl = [...document.querySelectorAll('.row')];
  const guessEl = [...document.querySelectorAll('.guess')];
  const winRowEl = document.querySelectorAll('.win-sequence');
- const colorRowEl = document.querySelectorAll('.colors');
  const hintInHintEl = document.querySelectorAll('.hint');
- let winAudio = document.querySelector('#win-audio')
- let loseAudio = document.querySelector('#lose-audio')
- const gameInstructionsEl = document.querySelector('#game-instructions');
+ const winAudio = document.querySelector('#win-audio')
+ const loseAudio = document.querySelector('#lose-audio')
  const playBtnEl = document.getElementById('startBtn')
- 
+ const gameInstructionsEl = document.getElementById('game-instructions');
+
  /*----- event listeners -----*/
  
 restartBtnEl.addEventListener('click', restartGame);
-
 colorEl.addEventListener('click', pickColor);
-
 guessEl.forEach(guess => guess.addEventListener('click', changeGuessColor));
-
 playBtnEl.addEventListener('click', startGame);
 
  /*----- functions -----*/
@@ -45,32 +40,29 @@ function initialize() {
      circleToFill = 1;
      rowToCompare = [];
      winColorToFill = [];
-     winColorToFill = getWin();
-     winRowEl[0].style.visibility = 'hidden';
-     currGuess = [];
      hintToFill = 9;
      hintElToFill = 0;
-
-     // put win logic 
 //      render();
- }
+ };
 
+
+//addeventlistener to playbtn
  function startGame(evt){
       const clickedPlayEl = evt.target;
 
       if(clickedPlayEl.id !== 'startBtn') return;
 
       if(clickedPlayEl.id === 'startBtn'){
+            winColorToFill = getWin();
+            winRowEl[0].style.visibility = 'hidden';
             gameInstructionsEl.style.visibility = 'hidden';
       }
 
  };
 
 
-
- function restartGame(evt){
-      // when this button is clicked , gameboard should clear colortofill 
-   // and rowtofill and hints 
+//addeventlistener to restart button
+function restartGame(evt){
    initialize();
    gameInstructionsEl.style.visibility = 'visible';
    guessEl.forEach(attempt => {
@@ -88,9 +80,7 @@ function initialize() {
 };
 
 
-
-
- function pickColor(evt){
+function pickColor(evt){
       const clickedEl = evt.target;
 
      if (clickedEl.className !== 'sub-color') return;
@@ -205,7 +195,6 @@ function changeGuessColor(evt){
      //update styling of border/highlight on current row
      //kill audio when restart button is clicked
 
-     //add instructions!!!!
 
 
 
