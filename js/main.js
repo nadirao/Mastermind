@@ -2,6 +2,8 @@
  const userGuess = [0,1,2,3,4,5];
  const colors = ['blue','pink','yellow','green','red','orange'];
  const numOfGuesses = 4;
+ let winAudio = document.querySelector('#win-audio')
+ let loseAudio = document.querySelector('#lose-audio')
 
  /*----- state variables -----*/
  let circleToFill;
@@ -22,8 +24,6 @@
  const colorRowEl = document.querySelectorAll('.colors');
  const hintInHintEl = document.querySelectorAll('.hint');
  const winMsgEl = document.getElementById('win-msg')
-
- 
 
  /*----- event listeners -----*/
  restartBtnEl.addEventListener('click', function handleClick(evt){
@@ -64,16 +64,20 @@
 //     
 //      }
 
+     if (rowToFill <= 9 ){
+            restartBtnEl.style.visibility = 'hidden';
+     };
+
      if (rowToFill < 0 ){
       //bug
             winRowEl[0].style.visibility = 'visible';
-            winMsgEl.innerText = 'You Lose :( Click Restart to Play Again!'
+            restartBtnEl.style.visibility = 'visible';
+            loseAudio.play();
             return;
      }
 
      currAttemptEl[rowToFill].style.border = 'solid thin black'
      
-
      currAttemptEl[rowToFill].children[circleToFill].style.backgroundColor = clickedEl.id
      circleToFill += 1;
 
@@ -92,10 +96,9 @@
            } 
            
            if (countGuesses === 4){
-                 winMsgEl.innerText = 'You Win. Click Restart to Play Again!'
-                 winRowEl[0].style.visibility = 'visible';
-                 
-                 
+            //      winMsgEl.innerText = 'You Win. Click Restart to Play Again!'
+                  winAudio.play();
+                  winRowEl[0].style.visibility = 'visible';restartBtnEl.style.visibility = 'visible';
             }
             
       }

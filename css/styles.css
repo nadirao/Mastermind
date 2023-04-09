@@ -12,7 +12,7 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-color: #333;
+    background-color: rgb(105, 88, 78);
 }
 
 header {
@@ -35,10 +35,10 @@ header {
 }
 
 
-#restartBtn {
+/* #restartBtn {
     line-height: 30px;
     font-size: 10px;
-}
+} */
 
 #board {
 
@@ -48,7 +48,7 @@ header {
     width: 30vmin;
     height: 95vmin;
     margin: auto;
-    background-color: #D0C3B0;
+    background-color: #ddc0ab;
     overflow: auto;
     border: 1px solid #4C3434;
     border-radius: 10px;
@@ -97,6 +97,7 @@ header {
     background-color: white;
     margin-left: .5vmin;
 }
+
 
 .hint {
     background-color: lightgrey;
