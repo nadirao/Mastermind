@@ -31,3 +31,4 @@ https://nadirao.github.io/Mastermind/
 
 - Refactor Code
 - Work on hints logic 
+- Win/loss message accesibility so all users can delight with a win or try again with a loss :)
