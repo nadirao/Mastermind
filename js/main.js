@@ -1,7 +1,7 @@
  /*----- constants -----*/
  const userGuess = [0,1,2,3,4,5];
  const colors = ['blue','pink','yellow','green','red','orange'];
- const numOfGuesses = 4;
+
  
  /*----- state variables -----*/
  let circleToFill;
@@ -166,8 +166,10 @@ function changeGuessColor(evt){
 
      //to-do: 1) stop execution at win
      //stop execution at lose
-     //incorporate render function to code
+     //incorporate render functions to code
+      //refactor!
 
+      
      //2) hint logic, no order for matches and no order for close matches
      //take back guess on current row ONLY
      //update styling of border/highlight on current row
