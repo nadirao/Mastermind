@@ -152,6 +152,15 @@ header {
     text-decoration: underline;
 }
 
+.colors > div:hover{
+    width: 3.5vmin;
+    height: 3.5vmin;
+}
+
+/* .guess:hover{
+    width: 3.5vmin;
+    height: 3.5vmin;
+} */
 
 
 
