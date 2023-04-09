@@ -1,3 +1,5 @@
+@import url(https://fonts.googleapis.com/css?family=Alegreya+Sans+SC:400,900,900italic,300);
+
 * {
     box-sizing: border-box;
 }
@@ -10,9 +12,11 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    background-color: #333;
 }
 
 header {
+    font-family: "Alegreya Sans SC", Arial;
     font-size: 3vmin;
     color: darkblue;
     letter-spacing: .5vmin;
@@ -24,37 +28,32 @@ header {
     font-size: 1.5vmin;
     color: black;
     position: absolute;
-    left: 80px;
+    left: 10vmin;
     margin: 0;
-    background-color: aliceblue;
+    background-color: white;
     /* border: solid thin; */
 }
 
 
-/* #playBtn {
-    width: 7vmin;
-    height: 5vmin;
-    border: solid;
-    border-color: black;
-    text-align: center;
-    background-color: aliceblue;
-    line-height: 2vmin;
-} */
+#restartBtn {
+    line-height: 30px;
+    font-size: 10px;
+}
 
 #board {
+
     display: flex;
     flex-direction: column;
     align-items: center;
     width: 30vmin;
     height: 95vmin;
     margin: auto;
-    background-color:papayawhip;
+    background-color: #D0C3B0;
     overflow: auto;
-    border: solid;
-    border-width: thin;
-    border-color: black;
-    border-radius: 0%;
+    border: 1px solid #4C3434;
+    border-radius: 10px;
     padding-top: 2vmin;
+    box-shadow: 2px 2px 5px 1px rgba(173, 173, 173, .37); 
     /* padding-left: vmin; */
 }
 

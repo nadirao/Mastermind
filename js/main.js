@@ -17,12 +17,13 @@
  const hintEl = [...document.querySelectorAll('.hints-container')];
  const boardEl = document.querySelector('#board');
  const currAttemptEl = [...document.querySelectorAll('.row')];
- const guessEl = document.querySelectorAll('.guess');
+ const guessEl = [...document.querySelectorAll('.guess')];
  const winRowEl = document.querySelectorAll('.win-sequence');
  const colorRowEl = document.querySelectorAll('.colors');
  const hintInHintEl = document.querySelectorAll('.hint');
  const winMsgEl = document.getElementById('win-msg')
 
+ 
 
  /*----- event listeners -----*/
  restartBtnEl.addEventListener('click', function handleClick(evt){
@@ -39,7 +40,11 @@
 
        winMsgEl.innerText = ''
 
- })
+       currAttemptEl.forEach(attempt => {
+            attempt.style.border = 'none';
+       })
+
+ });
 
  colorEl.addEventListener('click', function pickColor(evt){
      const clickedEl = evt.target;
@@ -52,14 +57,22 @@
            rowToFill -= 1;
            hintElToFill = 0;
            hintToFill -= 1;
+           currAttemptEl[rowToFill+1].style.border = 'none';
      }
 
-     if (rowToFill === 0 && circleToFill === 4){
-      winRowEl[0].style.visibility = 'visible';
+//      if(circleToFill === 4){
+//     
+//      }
+
+     if (rowToFill < 0 ){
+      //bug
+            winRowEl[0].style.visibility = 'visible';
             winMsgEl.innerText = 'You Lose :( Click Restart to Play Again!'
-
+            return;
      }
 
+     currAttemptEl[rowToFill].style.border = 'solid thin black'
+     
 
      currAttemptEl[rowToFill].children[circleToFill].style.backgroundColor = clickedEl.id
      circleToFill += 1;
@@ -77,25 +90,30 @@
                        countGuesses +=1;
                  } 
            } 
-
+           
            if (countGuesses === 4){
-                  winMsgEl.innerText = 'You Win. Click Restart to Play Again!'
-                  winRowEl[0].style.visibility = 'visible';
-           }
+                 winMsgEl.innerText = 'You Win. Click Restart to Play Again!'
+                 winRowEl[0].style.visibility = 'visible';
+                 
+                 
+            }
+            
+      }
+      
+      
+});
 
-     }
+guessEl.forEach(guess => guess.addEventListener('click', changeGuessColor));
 
 
-
-     
- });
+ 
 
 
  /*----- functions -----*/
 
- initialize();
+initialize();
  //used to initialize all state variables
- function initialize() {
+function initialize() {
      rowToFill = 9;
      circleToFill = 1;
      rowToCompare = [];
@@ -106,6 +124,7 @@
      currGuess = [];
      hintToFill = 9;
      hintElToFill = 0;
+
      // put win logic 
      //render();
  }
@@ -120,6 +139,36 @@ function getWin(){
      return winColorToFill
  }
 
+function changeGuessColor(evt){
+      const clickedGuessEl = evt.target;
+      //  console.log(evt)
+      //while on current row
+      //let player click on guess and change to different color
+      //
+
+
+
+      guessEl.forEach(guess => {
+            let countRows = 9;
+
+            if (rowToCompare.length > 0){
+                  if(guess === clickedGuessEl){
+                              
+                              console.log('clicked')
+                              guess.style.backgroundColor = 'white'
+                              circleToFill -= 1;
+                              rowToCompare.length -= 1;
+
+                  }
+            }
+            })
+};
+
+
+      
+
+      
+ 
 //  function winMsg() {
 
 //  }
