@@ -162,4 +162,44 @@ header {
     height: 3.5vmin;
 } */
 
+#game-instructions {
+    letter-spacing: .5vmin;
+    text-align: center;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 30vmin;
+    height: 95vmin;
+    margin: auto;
+    background-color: wheat;
+    overflow: auto;
+    border: 1px solid #4C3434;
+    border-radius: 10px;
+    padding-top: 2vmin;
+    box-shadow: 2px 2px 5px 1px rgba(173, 173, 173, .37);
+    position: absolute;
+}
 
+h1{
+    font-family: "Alegreya Sans SC", Arial;
+    font-size: 2vmin;
+    font-weight: normal;
+    color: navy;
+}
+
+#startBtn {
+    background: none;
+	color: darkslategrey;
+    font-size: 2.5vmin;
+	border: none;
+	padding: 0;
+	font-family: "Alegreya Sans SC", Arial;
+	cursor: pointer;
+	outline: inherit;
+}
+
+#startBtn:hover{
+    font-size: 3vmin;
+    text-decoration: underline;
+}

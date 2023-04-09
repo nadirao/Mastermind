@@ -4,12 +4,12 @@
 
  
  /*----- state variables -----*/
- let circleToFill;
- let rowToFill; // attmept number initialized to 9
+ let circleToFill; //current guess (just the individual guess to fill with color selected)
+ let rowToFill; // attmept number initialized to 9 last row but first attempt in gameplay
  let winColorToFill; // win sequence initialized to random 
- let rowToCompare; // current guess 
- let hintToFill;
- let hintElToFill;
+ let rowToCompare; // current guess (all 4 in array to compare with win sequence)
+ let hintToFill; //hint number init to 0
+ let hintElToFill; //hint element init to 9 last row but first attempt in gameplay
  /*----- cached elements  -----*/
  const restartBtnEl = document.getElementById('restartBtn');
  const colorEl = document.querySelector('.colors');
@@ -23,6 +23,8 @@
  const hintInHintEl = document.querySelectorAll('.hint');
  let winAudio = document.querySelector('#win-audio')
  let loseAudio = document.querySelector('#lose-audio')
+ const gameInstructionsEl = document.querySelector('#game-instructions');
+ const playBtnEl = document.getElementById('startBtn')
  
  /*----- event listeners -----*/
  
@@ -31,6 +33,8 @@ restartBtnEl.addEventListener('click', restartGame);
 colorEl.addEventListener('click', pickColor);
 
 guessEl.forEach(guess => guess.addEventListener('click', changeGuessColor));
+
+playBtnEl.addEventListener('click', startGame);
 
  /*----- functions -----*/
 
@@ -43,14 +47,48 @@ function initialize() {
      winColorToFill = [];
      winColorToFill = getWin();
      winRowEl[0].style.visibility = 'hidden';
-//      console.log(winColorToFill)
      currGuess = [];
      hintToFill = 9;
      hintElToFill = 0;
 
      // put win logic 
-     //render();
+//      render();
  }
+
+ function startGame(evt){
+      const clickedPlayEl = evt.target;
+
+      if(clickedPlayEl.id !== 'startBtn') return;
+
+      if(clickedPlayEl.id === 'startBtn'){
+            gameInstructionsEl.style.visibility = 'hidden';
+      }
+
+ };
+
+
+
+ function restartGame(evt){
+      // when this button is clicked , gameboard should clear colortofill 
+   // and rowtofill and hints 
+   initialize();
+   gameInstructionsEl.style.visibility = 'visible';
+   guessEl.forEach(attempt => {
+        attempt.style.backgroundColor = 'white'
+   })
+
+   hintInHintEl.forEach(hint => {
+         hint.style.backgroundColor = 'lightgray'
+    })
+
+
+    currAttemptEl.forEach(attempt => {
+         attempt.style.border = 'none';
+    })
+};
+
+
+
 
  function pickColor(evt){
       const clickedEl = evt.target;
@@ -91,7 +129,6 @@ function initialize() {
      currAttemptEl[rowToFill].children[circleToFill].style.backgroundColor = clickedEl.id
      circleToFill += 1;
 
-     // hintEl[hintToFill].children[hintElToFill].style.backgroundColor = 'black';
 
      rowToCompare.push(clickedEl.id)
       
@@ -106,7 +143,6 @@ function initialize() {
            } 
            
            if (countGuesses === 4){
-            //      winMsgEl.innerText = 'You Win. Click Restart to Play Again!'
                   winAudio.play();
                   winRowEl[0].style.visibility = 'visible';restartBtnEl.style.visibility = 'visible';
             }
@@ -114,23 +150,6 @@ function initialize() {
       }
  };
 
- function restartGame(evt){
-         // when this button is clicked , gameboard should clear colortofill 
-      // and rowtofill and hints 
-      initialize();
-      guessEl.forEach(attempt => {
-           attempt.style.backgroundColor = 'white'
-      })
-
-      hintInHintEl.forEach(hint => {
-            hint.style.backgroundColor = 'lightgray'
-       })
-
-
-       currAttemptEl.forEach(attempt => {
-            attempt.style.border = 'none';
-       })
- };
 
 function getWin(){
 
@@ -165,6 +184,19 @@ function changeGuessColor(evt){
             })
 };
 
+// function addGameInstructions(){
+//       const gameInstructions = document.createElement('p');
+//       gameInstructions.innerText = 'HEEYYYYY';
+//       gameInstructions.fontSize = '40px';
+//       gameInstructions.style.backgroundColor = 'white';
+//       return gameInstructions;
+// };
+
+// function render(){
+      
+// }
+
+
 
      //to-do: 1) stop execution at win
      //stop execution at lose
@@ -175,6 +207,9 @@ function changeGuessColor(evt){
      //2) hint logic, no order for matches and no order for close matches
      //take back guess on current row ONLY
      //update styling of border/highlight on current row
+     //kill audio when restart button is clicked
+
+     //add instructions!!!!
 
 
 
