@@ -154,8 +154,6 @@ function changeGuessColor(evt){
 
             if (rowToCompare.length > 0){
                   if(guess === clickedGuessEl){
-                              
-                              console.log('clicked')
                               guess.style.backgroundColor = 'white'
                               circleToFill -= 1;
                               rowToCompare.length -= 1;
@@ -166,10 +164,14 @@ function changeGuessColor(evt){
 };
 
 
-     //to-do: 1) stop execution at win and lose
-     //2) hint logic
+     //to-do: 1) stop execution at win
+     //stop execution at lose
+     //incorporate render function to code
+
+     //2) hint logic, no order for matches and no order for close matches
      //take back guess on current row ONLY
-     //
+     //update styling of border/highlight on current row
+
 
 
 
