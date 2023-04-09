@@ -184,20 +184,6 @@ function changeGuessColor(evt){
             })
 };
 
-// function addGameInstructions(){
-//       const gameInstructions = document.createElement('p');
-//       gameInstructions.innerText = 'HEEYYYYY';
-//       gameInstructions.fontSize = '40px';
-//       gameInstructions.style.backgroundColor = 'white';
-//       return gameInstructions;
-// };
-
-// function render(){
-      
-// }
-
-
-
      //to-do: 1) stop execution at win
      //stop execution at lose
      //incorporate render functions to code

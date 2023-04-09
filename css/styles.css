@@ -11,7 +11,7 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-color: rgb(105, 88, 78);
+    background-color: #759887;
 }
 
 header {
@@ -42,7 +42,7 @@ header {
     width: 30vmin;
     height: 95vmin;
     margin: auto;
-    background-color: #ddc0ab;
+    background-color: #f1e6de;
     overflow: auto;
     border: 1px solid #4C3434;
     border-radius: 10px;
@@ -172,7 +172,7 @@ header {
     width: 30vmin;
     height: 95vmin;
     margin: auto;
-    background-color: wheat;
+    background-color: white;
     overflow: auto;
     border: 1px solid #4C3434;
     border-radius: 10px;
