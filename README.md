@@ -22,10 +22,10 @@ https://nadirao.github.io/Mastermind/
 
 # Game Instructions: 
 
-- Guess a secret code consisting of 4 colors
-- X amount of hints will turn black if x amount of guesses matches the secret code
-- Solve the secret code with 10 tries or less. the fewer the better :)
-- You lose if you've use all 10 tries :(
+- Guess a secret code consisting of 4 colors.
+- X amount of hints will turn black if x amount of guesses matches the secret code.
+- Solve the secret code with 10 tries or less. The fewer the better :)
+- You lose if you've used all 10 tries :(
 
 # Next Steps
 
