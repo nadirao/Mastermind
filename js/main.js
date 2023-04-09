@@ -167,21 +167,31 @@ function changeGuessColor(evt){
       //while on current row
       //let player click on guess and change to different color
       //
+      
+      // for(let j = 39; j>=36; j --){
+      //       if(circleToFill > 0 && rowToCompare.length > 0){
+      //             if(guessEl[j]=== clickedGuessEl) {
+      //                   guessEl[j].style.backgroundColor = 'white'
+      //                   console.log('clicked')
+      //                          circleToFill--;
+      //                          rowToCompare.length--;
+      //             }
+            
+      //       }
+      // }
 
+      // guessEl.forEach(guess => {
+      //       let countRows = 9;
 
+      //       if (rowToCompare.length > 0){
+      //             if(guess === clickedGuessEl){
+      //                         guess.style.backgroundColor = 'white'
+      //                         circleToFill -= 1;
+      //                         rowToCompare.length -= 1;
 
-      guessEl.forEach(guess => {
-            let countRows = 9;
-
-            if (rowToCompare.length > 0){
-                  if(guess === clickedGuessEl){
-                              guess.style.backgroundColor = 'white'
-                              circleToFill -= 1;
-                              rowToCompare.length -= 1;
-
-                  }
-            }
-            })
+      //             }
+      //       }
+      //       })
 };
 
      //to-do: 1) stop execution at win
