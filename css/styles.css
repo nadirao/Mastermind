@@ -7,7 +7,6 @@
 body {
     height: 100vh;
     margin: auto;
-    /* font-family: Arial, Helvetica, sans-serif; */
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -24,24 +23,19 @@ header {
     margin: auto;
 }
 
-#win-msg {
-    font-size: 1.5vmin;
-    color: black;
-    position: absolute;
-    left: 10vmin;
-    margin: 0;
-    background-color: white;
-    /* border: solid thin; */
+#restartBtn {
+    background: none;
+	color: darkslategrey;
+    font-size: 2.5vmin;
+	border: none;
+	padding: 0;
+	font-family: "Alegreya Sans SC", Arial;
+	cursor: pointer;
+	outline: inherit;
 }
 
-
-/* #restartBtn {
-    line-height: 30px;
-    font-size: 10px;
-} */
-
 #board {
-
+    
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -59,14 +53,14 @@ header {
 
 
 .row, .win-row, .color-row {
-  
+    
     display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: center;
     padding: 0vmin;
     margin: auto;
-
+    
 }
 
 .hints-container, .placeholder {
@@ -111,30 +105,30 @@ header {
 
 
 #blue {
-   
+    
     background-color: blue;
     
 }
 #pink {
     
     background-color: pink;
- 
+    
 }
 #yellow {
-
+    
     background-color: yellow;
     
 }
 #green {
     background-color: green;
-
+    
 }
 #red {
-
+    
     background-color: red;
 }
 #orange {
- 
+    
     background-color: orange;
 }
 
@@ -154,7 +148,10 @@ header {
     padding: .4vmin;
 }
 
-
+#restartBtn:hover{
+    font-size: 3vmin;
+    text-decoration: underline;
+}
 
 
 

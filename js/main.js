@@ -2,9 +2,7 @@
  const userGuess = [0,1,2,3,4,5];
  const colors = ['blue','pink','yellow','green','red','orange'];
  const numOfGuesses = 4;
- let winAudio = document.querySelector('#win-audio')
- let loseAudio = document.querySelector('#lose-audio')
-
+ 
  /*----- state variables -----*/
  let circleToFill;
  let rowToFill; // attmept number initialized to 9
@@ -23,31 +21,39 @@
  const winRowEl = document.querySelectorAll('.win-sequence');
  const colorRowEl = document.querySelectorAll('.colors');
  const hintInHintEl = document.querySelectorAll('.hint');
- const winMsgEl = document.getElementById('win-msg')
-
+ let winAudio = document.querySelector('#win-audio')
+ let loseAudio = document.querySelector('#lose-audio')
+ 
  /*----- event listeners -----*/
- restartBtnEl.addEventListener('click', function handleClick(evt){
-      // when this button is clicked , gameboard should clear colortofill 
-      // and rowtofill and hints 
-      initialize();
-      guessEl.forEach(attempt => {
-           attempt.style.backgroundColor = 'white'
-      })
+ 
+restartBtnEl.addEventListener('click', restartGame);
 
-      hintInHintEl.forEach(hint => {
-            hint.style.backgroundColor = 'lightgray'
-       })
+colorEl.addEventListener('click', pickColor);
 
-       winMsgEl.innerText = ''
+guessEl.forEach(guess => guess.addEventListener('click', changeGuessColor));
 
-       currAttemptEl.forEach(attempt => {
-            attempt.style.border = 'none';
-       })
+ /*----- functions -----*/
 
- });
+initialize();
+ //used to initialize all state variables
+function initialize() {
+     rowToFill = 9;
+     circleToFill = 1;
+     rowToCompare = [];
+     winColorToFill = [];
+     winColorToFill = getWin();
+     winRowEl[0].style.visibility = 'hidden';
+//      console.log(winColorToFill)
+     currGuess = [];
+     hintToFill = 9;
+     hintElToFill = 0;
 
- colorEl.addEventListener('click', function pickColor(evt){
-     const clickedEl = evt.target;
+     // put win logic 
+     //render();
+ }
+
+ function pickColor(evt){
+      const clickedEl = evt.target;
 
      if (clickedEl.className !== 'sub-color') return;
 
@@ -58,6 +64,7 @@
            hintElToFill = 0;
            hintToFill -= 1;
            currAttemptEl[rowToFill+1].style.border = 'none';
+           currAttemptEl[rowToFill+1].style.padding = '0'
      }
 
 //      if(circleToFill === 4){
@@ -76,8 +83,9 @@
             return;
      }
 
-     currAttemptEl[rowToFill].style.border = 'solid thin black'
-     
+     currAttemptEl[rowToFill].style.border = 'solid thin darkslategrey';
+     currAttemptEl[rowToFill].style.padding = '.7vmin';
+
      currAttemptEl[rowToFill].children[circleToFill].style.backgroundColor = clickedEl.id
      circleToFill += 1;
 
@@ -102,35 +110,25 @@
             }
             
       }
-      
-      
-});
+ };
 
-guessEl.forEach(guess => guess.addEventListener('click', changeGuessColor));
+ function restartGame(evt){
+         // when this button is clicked , gameboard should clear colortofill 
+      // and rowtofill and hints 
+      initialize();
+      guessEl.forEach(attempt => {
+           attempt.style.backgroundColor = 'white'
+      })
+
+      hintInHintEl.forEach(hint => {
+            hint.style.backgroundColor = 'lightgray'
+       })
 
 
- 
-
-
- /*----- functions -----*/
-
-initialize();
- //used to initialize all state variables
-function initialize() {
-     rowToFill = 9;
-     circleToFill = 1;
-     rowToCompare = [];
-     winColorToFill = [];
-     winColorToFill = getWin();
-     winRowEl[0].style.visibility = 'hidden';
-     console.log(winColorToFill)
-     currGuess = [];
-     hintToFill = 9;
-     hintElToFill = 0;
-
-     // put win logic 
-     //render();
- }
+       currAttemptEl.forEach(attempt => {
+            attempt.style.border = 'none';
+       })
+ };
 
 function getWin(){
 
@@ -140,7 +138,7 @@ function getWin(){
      }
 
      return winColorToFill
- }
+ };
 
 function changeGuessColor(evt){
       const clickedGuessEl = evt.target;
@@ -168,63 +166,12 @@ function changeGuessColor(evt){
 };
 
 
-      
+     //to-do: 1) stop execution at win and lose
+     //2) hint logic
+     //take back guess on current row ONLY
+     //
+
+
 
       
  
-//  function winMsg() {
-
-//  }
-
-
- //responsible for transferring all state variables to the dom
-//   function render() {
-
-//   }
-
-// function guessCode() {
-
-// }
-
-
-//   /*----- constants -----*/
-
-
-//   /*----- state variables -----*/
-//   let attemptNum;
-//   let currGuess;
-//   let turn;
-//   let secretCode;
-
-
-//   /*----- cached elements  -----*/
-//   const restartBtnEl = document.getElementById('restartBtn');
-//   const colorsEl = document.querySelectorAll('.sub-color')
-//   const guessEl = document.querySelectorAll('.guess')
-//   const currRowEl = [...document.querySelectorAll('.guess-container')];
-//   const winEl = document.querySelectorAll('.secret-color')
-//   const winCodeEl = document.querySelectorAll('.win-sequence')
-
-//   /*----- event listeners -----*/
-// //  restartBtnEl.addEventListener('click', function handleClick(evt){
-// //       // when this button is clicked , gameboard should clear colortofill 
-// //       // and rowtofill and hints 
-// //       initialize();
-// //       guessEl.forEach(attempt => {
-// //            attempt.style.backgroundColor = 'white'
-// //       })
-// //  })
-
-//   /*----- functions -----*/
-
-//   function init(){
-//       attemptNum = 9;
-//       currGuess = 1;
-//       turn = [];
-//       secretCode = [];
-//   }
-
-//   function restartGame(evt){
-//       init();
-
-//   }
