@@ -11,7 +11,8 @@ https://en.wikipedia.org/wiki/Mastermind_(board_game)
 
 
 # Game Previews
-<img width="950" alt="how to" src="https://user-images.githubusercontent.com/110858421/230793057-7c411700-a611-422c-8e53-0b027e4daa5b.png">
+<img width="950" alt="how to" src="https://user-images.githubusercontent.com/110858421/230793501-a4ed54f8-add5-45e7-b651-1143e6efda7b.png">
+
 
 <img width="950" alt="init()" src="https://user-images.githubusercontent.com/110858421/230793060-a99ddb5a-e21c-4170-bd84-feb4200753ce.png">
 
