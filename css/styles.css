@@ -142,9 +142,8 @@ header {
 }
 
 .win-sequence {
-    border: solid darkslategrey;
-    border-width: thin;
-    border-radius: 0%;
+    border: 1px solid #555;
+    border-radius: 10px;
     padding: .4vmin;
 }
 

@@ -64,7 +64,8 @@ function initialize() {
            hintElToFill = 0;
            hintToFill -= 1;
            currAttemptEl[rowToFill+1].style.border = 'none';
-           currAttemptEl[rowToFill+1].style.padding = '0'
+           currAttemptEl[rowToFill+1].style.padding = '0';
+           currAttemptEl[rowToFill].style.borderRadius = '0';
      }
 
 //      if(circleToFill === 4){
@@ -83,7 +84,8 @@ function initialize() {
             return;
      }
 
-     currAttemptEl[rowToFill].style.border = 'solid thin darkslategrey';
+     currAttemptEl[rowToFill].style.border = '1px solid #555';
+     currAttemptEl[rowToFill].style.borderRadius = '10px';
      currAttemptEl[rowToFill].style.padding = '.7vmin';
 
      currAttemptEl[rowToFill].children[circleToFill].style.backgroundColor = clickedEl.id
