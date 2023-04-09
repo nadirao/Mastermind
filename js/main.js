@@ -64,6 +64,8 @@ function initialize() {
 //addeventlistener to restart button
 function restartGame(evt){
    initialize();
+   loseAudio.pause();
+   winAudio.pause();
    gameInstructionsEl.style.visibility = 'visible';
    guessEl.forEach(attempt => {
         attempt.style.backgroundColor = 'white'
@@ -193,7 +195,6 @@ function changeGuessColor(evt){
      //2) hint logic, no order for matches and no order for close matches
      //take back guess on current row ONLY
      //update styling of border/highlight on current row
-     //kill audio when restart button is clicked
 
 
 
