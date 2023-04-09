@@ -11,7 +11,7 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-color: #759887;
+    background-color: rgb(132, 171, 203);
 }
 
 header {
@@ -25,7 +25,7 @@ header {
 
 #restartBtn {
     background: none;
-	color: darkslategrey;
+	color: rgb(221, 57, 28);
     font-size: 2.5vmin;
 	border: none;
 	padding: 0;
@@ -136,7 +136,7 @@ header {
     display: grid;
     grid-template-columns: repeat(3, 2vmin);
     grid-template-rows: repeat(2, 2vmin);
-    width: 7vmin;
+    width: 9vmin;
     gap: 2vmin;
     margin-bottom: 4vmin;
 }
@@ -181,7 +181,7 @@ header {
     position: absolute;
 }
 
-h1{
+h1, p {
     font-family: "Alegreya Sans SC", Arial;
     font-size: 3vmin;
     font-weight: normal;
@@ -191,7 +191,7 @@ h1{
 
 #startBtn {
     background: none;
-	color: darkslategrey;
+	color: rgb(221, 57, 28);
     font-size: 2.5vmin;
 	border: none;
 	padding: 0;
@@ -203,4 +203,12 @@ h1{
 #startBtn:hover{
     font-size: 3vmin;
     text-decoration: underline;
+}
+
+p { 
+    font-size: 2vmin;
+    text-decoration: none;
+    color: darkslategray;
+    padding: 1vmin;
+    margin-top: 0;
 }
