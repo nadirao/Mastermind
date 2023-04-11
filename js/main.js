@@ -158,39 +158,19 @@ function changeGuessColor(evt){
       //  console.log(evt)
       //while on current row
       //let player click on guess and change to different color
-      //
-      
-      // for(let j = 39; j>=36; j --){
-      //       if(circleToFill > 0 && rowToCompare.length > 0){
-      //             if(guessEl[j]=== clickedGuessEl) {
-      //                   guessEl[j].style.backgroundColor = 'white'
-      //                   console.log('clicked')
-      //                          circleToFill--;
-      //                          rowToCompare.length--;
-      //             }
-            
-      //       }
-      // }
+      if (rowToCompare.length > 0 && rowToCompare.length < 4){
+                  clickedGuessEl.style.backgroundColor = 'white'
+                  rowToCompare.length-=1
+                  circleToFill-=1
+    }
 
-      // guessEl.forEach(guess => {
-      //       let countRows = 9;
-
-      //       if (rowToCompare.length > 0){
-      //             if(guess === clickedGuessEl){
-      //                         guess.style.backgroundColor = 'white'
-      //                         circleToFill -= 1;
-      //                         rowToCompare.length -= 1;
-
-      //             }
-      //       }
-      //       })
 };
 
      //to-do: 1) stop execution at win
-     //2)incorporate render functions to code and refactor!
-     //3) hint logic, no order for matches and no order for close matches
-     //4)take back guess on current row ONLY
-     //5) OPTIONAL update styling of border/highlight on current row
+     //2) hint logic, no order for matches and no order for close matches
+     //3)take back guess on current row ONLY ✅
+     //4) OPTIONAL update styling of border/highlight on current row
+     //5)ehhhh : incorporate render functions to code and refactor!
 
 
 
