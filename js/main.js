@@ -98,16 +98,12 @@ function pickColor(evt){
            currAttemptEl[rowToFill+1].style.borderRadius = 'none';
      }
 
-//      if(circleToFill === 4){
-//     
-//      }
-
      if (rowToFill <= 9 ){
             restartBtnEl.style.visibility = 'hidden';
      };
 
-     if (rowToFill < 0 ){
-      //bug
+     if (rowToFill < 0 && circleToFill < 4){
+      //bug: requires player to click another color outside of row 
             winRowEl[0].style.visibility = 'visible';
             restartBtnEl.style.visibility = 'visible';
             loseAudio.play();
@@ -136,7 +132,8 @@ function pickColor(evt){
            
            if (countGuesses === 4){
                   winAudio.play();
-                  winRowEl[0].style.visibility = 'visible';restartBtnEl.style.visibility = 'visible';
+                  winRowEl[0].style.visibility = 'visible';
+                  restartBtnEl.style.visibility = 'visible';
             }
             
       }
@@ -148,6 +145,7 @@ function getWin(){
      for(let i = 0; i < 4; i++){
            winColorToFill.push(colors[Math.floor(Math.random() * 6)])
            winEl[i].style.backgroundColor = winColorToFill[i]
+           console.log(winColorToFill)
      }
 
      return winColorToFill
@@ -155,7 +153,7 @@ function getWin(){
 
 function changeGuessColor(evt){
       const clickedGuessEl = evt.target;
-      //  console.log(evt)
+      // console.log(evt)
       //while on current row
       //let player click on guess and change to different color
       if (rowToCompare.length > 0 && rowToCompare.length < 4){
@@ -164,6 +162,10 @@ function changeGuessColor(evt){
                   circleToFill-=1
     }
 
+};
+
+function getCloseMatches(){
+      
 };
 
      //to-do: 1) stop execution at win
