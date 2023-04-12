@@ -117,7 +117,6 @@ function pickColor(evt){
      currAttemptEl[rowToFill].children[circleToFill].style.backgroundColor = clickedEl.id
      circleToFill += 1;
 
-
      rowToCompare.push(clickedEl.id)
       
      if(rowToCompare.length === 4){
@@ -129,7 +128,7 @@ function pickColor(evt){
                        countGuesses +=1;
                  } 
            } 
-           
+           //rowToCompare.includes(winColorToFill[3])
            if (countGuesses === 4){
                   winAudio.play();
                   winRowEl[0].style.visibility = 'visible';
@@ -145,7 +144,7 @@ function getWin(){
      for(let i = 0; i < 4; i++){
            winColorToFill.push(colors[Math.floor(Math.random() * 6)])
            winEl[i].style.backgroundColor = winColorToFill[i]
-           console.log(winColorToFill)
+      //      console.log(winColorToFill)
      }
 
      return winColorToFill
@@ -153,20 +152,54 @@ function getWin(){
 
 function changeGuessColor(evt){
       const clickedGuessEl = evt.target;
-      // console.log(evt)
       //while on current row
       //let player click on guess and change to different color
+
+      
       if (rowToCompare.length > 0 && rowToCompare.length < 4){
                   clickedGuessEl.style.backgroundColor = 'white'
                   rowToCompare.length-=1
                   circleToFill-=1
-    }
+    } 
+
 
 };
 
-function getCloseMatches(){
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// function getCloseMatches(){
       
-};
+// };
 
      //to-do: 1) stop execution at win
      //2) hint logic, no order for matches and no order for close matches
